@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 // const bcrypt = require("bcrypt");
 // const jwt = require("jsonwebtoken");
 // const checkAuth = require("../middleware/check-auth");
 // const confirmEmailToken = require("../middleware/confirm-email");
-// const User = require("../../models/user");
+const User = require("../../models/user");
 // const Advertisement = require("../../models/advertisement");
 // // const templates = require("../../email/templates");
 // // const sendEmail = require("../../email/send");
@@ -18,13 +18,29 @@ const router = express.Router();
 // const JWT_KEY = "dracaris";
 
 //handle clicking on confirmation link
-router.get("/testapi", (req, res, next) => {
+router.put("/testapi", (req, res, next) => {
   console.log("req.decodedJWT in handle confirmation => ");
-  return res.status(200).json({
-    message: "api called successfully",
-    status: 200,
-    resolve : "hey",
+  const user = new User({
+    _id: mongoose.Types.ObjectId(),
+    name: req.body.name,
   });
+
+  user
+    .save()
+    .then((resolve) => {
+      return res.status(200).json({
+        message: "user saved successfully",
+        status: 200,
+        resolve,
+      });
+    })
+    .catch((err) => {
+      console.log("error in test api");
+      return res.status(500).json({
+        error: err,
+        status: 500,
+      });
+    });
 });
 
 // //signup

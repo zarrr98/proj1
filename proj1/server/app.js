@@ -11,6 +11,7 @@ mongoose.connect("mongodb://zarrr98:95243045@cluster0-shard-00-00-ediy8.mongodb.
     // {
     //     useMongoClient: true,
     // }
+    { useNewUrlParser: true }
     )
 mongoose.Promise = global.Promise    
 app.use(cors());
