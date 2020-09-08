@@ -5,9 +5,9 @@ const routes = require('./api/routes/apis')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const path = require('path');
-const {ConectionString} = require("./configs") || ""
+const {ConectionString} = require("./configs")
 
-let uri = process.env.CONNECTION_STRING || ConectionString;
+let uri = process.env.CONNECTION_STRING;
 mongoose.connect(uri,
     // {
     //     useMongoClient: true,
