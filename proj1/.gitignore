@@ -24,4 +24,4 @@ yarn-error.log*
 
 
 #private files like config
-/server/configs.js
+#/server/configs.js
