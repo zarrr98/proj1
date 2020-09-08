@@ -8,7 +8,7 @@ const path = require('path');
 const {ConectionString} = require("./configs")
 
 //var uri = process.env.MONGO_URI || options.urls[app.env];
-mongoose.connect(ConectionString,
+mongoose.connect(process.env.CONNECTION_STRING,
     // {
     //     useMongoClient: true,
     // }
