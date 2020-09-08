@@ -49,7 +49,8 @@ class App extends React.Component {
           value={this.state.value}
           onChange={this.onChangeInput}
         ></input>
-        <p>{this.state.resolve}</p>
+        <p className="resolve-text">{this.state.resolve}</p>
+        <p>what a pleasant deasent</p>
         <button onClick={this.callApi}>submit name</button>
         <p>{this.state.error}</p>
       </div>

@@ -5,9 +5,10 @@ const routes = require('./api/routes/apis')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const path = require('path');
+const {ConectionString} = require("./configs")
 
 //var uri = process.env.MONGO_URI || options.urls[app.env];
-mongoose.connect("mongodb://zarrr98:95243045@cluster0-shard-00-00-ediy8.mongodb.net:27017,cluster0-shard-00-01-ediy8.mongodb.net:27017,cluster0-shard-00-02-ediy8.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority",
+mongoose.connect(ConectionString,
     // {
     //     useMongoClient: true,
     // }
