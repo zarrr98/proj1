@@ -54,6 +54,7 @@ class App extends React.Component {
         <button onClick={this.callApi}>submit name</button>
         <p>test [from develop branch]</p>
         <p>tell yourself you can always STOP [from feature/first-feature branch]</p>
+        <p>ends with meetings in parking lots. [from feature/second-feature branch]</p>
         <p>{this.state.error}</p>
       </div>
     );
